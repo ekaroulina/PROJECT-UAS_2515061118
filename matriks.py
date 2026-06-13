@@ -9,7 +9,7 @@ B = [[9, 8, 7],
     [6, 5, 4],
     [3, 2, 1]]
 
-# Perkalian matriks 3x3 menggunakan fungsi khusus
+# Perkalian matriks 3x3 
 print("Perkalian Matriks 3x3")
 hasil_kali = eka118.kali_matriks_3x3(A, B)
 for row in hasil_kali:
@@ -26,7 +26,12 @@ print("\nDeterminan Matriks A")
 det_A = eka118.determinan(A)
 print(det_A)
 
-# Invers (jika matriks non-singular, coba matriks lain)
+#Transpose
+print("\nTranspose Matriks A")
+trans_A = eka118.transpose(A)
+print(trans_A)
+
+# Invers
 C = [[4, 7, 2],
     [3, 6, 1],
     [2, 5, 3]]
