@@ -1,7 +1,5 @@
-# eka118.py - versi seimbang (ringkas tapi jelas)
-
+# eka118.py 
 def tambah(A, B):
-    """Penjumlahan dua matriks"""
     return [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
 
 def kurang(A, B):
@@ -18,7 +16,6 @@ def determinan(A):
     n = len(A)
     if n == 1: return A[0][0]
     if n == 2: return A[0][0]*A[1][1] - A[0][1]*A[1][0]
-    # Ekspansi kofaktor baris pertama
     return sum((1 if j%2==0 else -1) * A[0][j] * determinan(
         [row[:j] + row[j+1:] for row in A[1:]]
     ) for j in range(n))
@@ -31,7 +28,6 @@ def invers(A):
     kof = [[((1 if (i+j)%2==0 else -1)) * determinan(
         [row[:j] + row[j+1:] for row in (A[:i] + A[i+1:])]
     ) for j in range(n)] for i in range(n)]
-    # Adjoin = transpose kofaktor, lalu bagi dengan det
     return [[kof[j][i] / det for j in range(n)] for i in range(n)]
 
 def kali_matriks_3x3(A, B):
