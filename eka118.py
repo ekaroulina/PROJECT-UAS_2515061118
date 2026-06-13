@@ -10,7 +10,12 @@ def kali(A, B):
     return [[sum(A[i][k] * B[k][j] for k in range(kl)) for j in range(bk)] for i in range(br)]
 
 def transpose(A):
-    return [[A[i][j] for i in range(len(A))] for j in range(len(A[0]))]
+    baris, kolom = len(A), len(A[0])
+    hasil = buat_matriks(kolom, baris)
+    for i in range(baris):
+        for j in range(kolom):
+            hasil[j][i] = A[i][j]
+    return hasil
 
 def determinan(A):
     n = len(A)
